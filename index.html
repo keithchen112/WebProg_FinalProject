@@ -130,12 +130,26 @@
     </div>   
 
     <div class="jumbotron col-xs-12 col-sm-5 col-lg-5">
-      <h4>STR:</h4>
-      <h4>DEX:</h4>
-      <h4>CON:</h4>
-      <h4>INT:</h4>
-      <h4>WIS:</h4>
-      <h4>CHA:</h4>
+        <div class="row">
+            <div class="col-sm-6">
+              <h4>Size:</h4>
+              <h4>Armor:</h4>
+              <h4>Attack:</h4>
+              <h4>Special:</h4>
+              <h4>Fort:</h4>
+              <h4>Ref:</h4>
+              <h4>Will:</h4>
+            </div>
+            <div class="col-sm-6">
+              <h4>STR:</h4>
+              <h4>DEX:</h4>
+              <h4>CON:</h4>
+              <h4>INT:</h4>
+              <h4>WIS:</h4>
+              <h4>CHA:</h4>
+                <h4>Bonus Feat:</h4>
+            </div>
+        </div>
     </div>
 
 </div><!--container -->
@@ -157,6 +171,43 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
       <script>
       $(document).ready(function() {
+          
+          
+          //---JSON REQUESTS----//
+          
+          var request = {"race": "", "role": "", "bonusfeat": ""};
+          
+          
+          //---JSON RESPONSE---//
+          
+          //Default//
+          var resp_reset = {"Name":"", "Size": "", "Armor": "", "Attack": "", "Special": "", "Fort": "", "Ref": "", "Will": "", "STR": "", "DEX": "", "CON": "", "INT": "", "WIS": "", "CHA": ""};
+          
+          //Goblin Thief//
+          var GobThief = {"Name":"Goblin", "Size": "Small", "Armor": "16", "Attack": "+1", "Special": "Night Vision", "Fort": "+3", "Ref": "+2", "Will": "-1", "STR": "11", "DEX": "15", "CON": "12", "INT": "10", "WIS": "9", "CHA": "6"};
+          console.log(GobThief);
+          
+          //Beast Mage//
+          var BeastMage = {"Name":"Rakshasa", "Size": "Medium", "Armor": "25", "Attack": "+10", "Special": "Shapeshifter", "Fort": "+9", "Ref": "+12", "Will": "+8", "STR": "16", "DEX": "20", "CON": "22", "INT": "13", "WIS": "13", "CHA": "17"};
+          console.log(BeastMage);
+          
+          //Outsider Priest
+          var OutsiderPriest = {"Name":"Astral Deva", "Size": "Medium", "Armor": "29", "Attack": "+15", "Special": "Flight", "Fort": "+16", "Ref": "+13", "Will": "+11", "STR": "26", "DEX": "19", "CON": "21", "INT": "18", "WIS": "18", "CHA": "23"};
+          console.log(OutsiderPriest);
+          
+          //Humanoid Warrior//
+          var HumanWarrior = {"Name":"Hill Giant", "Size": "Large", "Armor": "21", "Attack": "+7", "Special": "Intimidating", "Fort": "+11", "Ref": "2", "Will": "+3", "STR": "25", "DEX": "8", "CON": "19", "INT": "6", "WIS": "10", "CHA": "7"};
+          console.log(HumanWarrior);
+          
+          //Undead Specialist//
+          var UndeadSpecialist = {"Name":"Ghoul", "Size": "Medium", "Armor": "14", "Attack": "+1", "Special": "Paralyze", "Fort": "+2", "Ref": "+2", "Will": "+5", "STR": "13", "DEX": "15", "CON": "-", "INT": "13", "WIS": "14", "CHA": "14"};
+          console.log(UndeadSpecialist);
+          
+          //---JSON ERROR---//
+          
+          var misValue = {"missing": "true", "Message": "Please select a '++'"};
+          var 404 = {};
+          
           
           
         $("#reset_button").click(function(){

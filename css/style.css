@@ -6,15 +6,19 @@ display: none;
 	background-color: #efefef;
 }
 
+#owl-demo .item img{
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 285px;
+}
 
-
-
+/* MEDIA QUERIES */
 /* Extra Small Devices, .visible-xs-* */
 @media (max-width: 767px) {
     .btn {font-size:10px}
     .control-label {font-size:12px}
      h4 {font-size:14px}
-    
 }
 
 /* Small Devices, .visible-sm-* */
@@ -34,12 +38,4 @@ display: none;
 @media (min-width: 1200px) {
     .btn {font-size:14px}
     .control-label {font-size:14px}
-}
-
-
-#owl-demo .item img{
-    display: block;
-    width: 100%;
-    height: auto;
-    max-height: 285px;
 }
